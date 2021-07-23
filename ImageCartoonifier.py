@@ -1,5 +1,5 @@
-import cv2 #for image processing
-import easygui #to open the filebox
+import cv2
+import easygui
 import numpy as np #to store image
 import imageio #to read image stored at particular path
 
@@ -11,16 +11,17 @@ from tkinter import filedialog
 from tkinter import *
 from PIL import ImageTk, Image
 
+
 top=tk.Tk()
 top.geometry('400x400')
 top.title('Cartoonify Your Image !')
 top.configure(background='white')
 label=Label(top,background='#CDCDCD', font=('calibri',20,'bold'))
 
+
 def upload():
     ImagePath=easygui.fileopenbox()
     cartoonify(ImagePath)
-
 
 def cartoonify(ImagePath):
     # read the image
@@ -82,8 +83,7 @@ def cartoonify(ImagePath):
     save1.pack(side=TOP,pady=50)
     
     plt.show()
-    
-    
+
 def save(ReSized6, ImagePath):
     #saving an image using imwrite()
     newName="cartoonified_Image"
@@ -94,8 +94,30 @@ def save(ReSized6, ImagePath):
     I= "Image saved by name " + newName +" at "+ path
     tk.messagebox.showinfo(title=None, message=I)
 
+
 upload=Button(top,text="Cartoonify an Image",command=upload,padx=10,pady=5)
 upload.configure(background='#364156', foreground='white',font=('calibri',10,'bold'))
 upload.pack(side=TOP,pady=50)
 
+upload()
+save(ReSized6, ImagePath)
+
+
 top.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
